@@ -5,6 +5,7 @@ import NavbarItem from "./NavbarItem";
 import { ModeToggle } from "./ModeToggle";
 import MobileToggle from "./MobileToggle";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 const navbarMenuItems = [
   {
@@ -30,11 +31,13 @@ const navbarMenuItems = [
 ];
 const Navbar = () => {
   return (
-    <nav className="py-3  border-gray-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+    <nav className="py-3 border-gray-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white dark:bg-background fixed top-0 left-0 w-full overflow-hidden z-50 h-20">
       <div className="container md:px-12">
         <div className="flex items-center justify-between flex-row w-full">
           <div className="pt-[0.2em]">
-            <Logo navLogo={LogoImg} />
+            <Link href="/">
+              <Logo navLogo={LogoImg} />
+            </Link>
           </div>
           {/** Right */}
           <div className="lg:flex lg:flex-row lg:justify-between lg:space-x-14 lg:items-center">

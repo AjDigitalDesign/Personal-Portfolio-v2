@@ -11,11 +11,11 @@ type BannerType = {
 };
 const Banner: FC<BannerType> = ({ image }) => {
   return (
-    <section className="py-5">
+    <section className="py-5 mt-20">
       <div className="container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row">
         <div className="mb-14 lg:mb-0 lg:w-1/2">
           <h1 className="max-w-xl text-[2.2rem] leading-none font-extrabold font-sans text-center md:text-5xl lg:text-left lg:leading-tight mb-5">
-            Hi, I'm AJ Jardiah Jr!{" "}
+            Hi, I'm AJ Jardiah Jr!
             <span className="not-italic text-primary_red lg:block">
               Full Stack Software Dev.
             </span>

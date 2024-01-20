@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider/ThemeProvider";
 import Navbar from "@/components/Header/Navbar/Navbar";
 import PageScroll from "@/components/PageScroll";
+import Footer from "@/components/Footer/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,11 +33,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main>
-            <Navbar />
-            <PageScroll />
-            {children}
-          </main>
+          <Navbar />
+          <PageScroll />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -16,7 +16,7 @@ interface RecentPostsProps {
 
 const RecentPosts: FC<RecentPostsProps> = ({ posts }) => {
   return (
-    <section className="py-10 lg:py-14">
+    <section className="pt-10 lg:pt-14">
       <div className="container max-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col max-w-[30rem] mx-auto justify-center items-center">
           <span className="text-primary_red text-xl font-semibold">
@@ -61,7 +61,7 @@ const RecentPosts: FC<RecentPostsProps> = ({ posts }) => {
                   </ul>
                 </div>
                 <div className="mt-1">
-                  <h3 className="font-bold text-2xl font-sans text-white">
+                  <h3 className="font-semibold text-xl font-sans text-white">
                     <Link href={`/writing/${post.url}`}>{post.name}</Link>
                   </h3>
                 </div>

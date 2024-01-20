@@ -3,6 +3,18 @@ import projectImg from "../../public/project1.jpeg";
 import projectImg2 from "../../public/portfolio2.jpg";
 import projectImg3 from "../../public/portfolio3.jpg";
 import Link from "next/link";
+import { ZoomInIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const projects = [
   {
@@ -54,50 +66,45 @@ const RecentWork = () => {
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-10">
           {projects?.map((project) => (
-            <div
-              key={project.id}
-              className="relative mb-5 overflow-hidden bg-cover"
-            >
-              <Image
-                src={project.image}
-                width={600}
-                height={400}
-                alt="test"
-                className="object-cover bg-cover h-96 overflow-hidden"
-              />
+            <Dialog>
               <div
-                className="
-               absolute 
-               bottom-0 left-0 right-0 w-full
-               bg-gradient-to-t from-black/95 via-black/80 to-black/10
-               py-4 
-               px-3 
-               text-center
-               text-white
-               overflow-hidden
-               cursor-pointer
-               transform: scale(0);
-               opacity-0 transition duration-300 ease-in-out  hover:opacity-100
-               "
+                key={project.id}
+                className="relative overflow-hidden rounded-[10px] shadow-md group"
               >
-                <h5 className="font-semibold text-2xl mb-2 font-sans capitalize">
-                  {project.name}
-                </h5>
-                <p className="line-clamp-6 text-center  ">
-                  {project.description}
-                </p>
-                <div>
-                  <Link
-                    href={project.url}
-                    className="text-white inline-block bg-primary_red font-medium rounded text-sm px-5 py-3 text-center hover:bg-primary_red/70 hover:drop-shadow-md transition duration-300 ease-in-out my-2"
-                  >
-                    {project.urlLabel}
-                  </Link>
+                <Image
+                  className="w-full h-96 object-cover transform scale-100 transition-transform duration-300 group-hover:scale-110"
+                  src={project.image.src}
+                  width={600}
+                  height={600}
+                  alt="test"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-[0.90] transition-opacity duration-300 bg-primary_red  top-[15px] left-[10px] right-[10px] bottom-[10px] h-auto w-auto z-[1] rounded-[10px] transition-all-[0.35s] cursor-pointer">
+                  <div className="bg-white top-[30px] text-center z-[99] absolute leading-[55px] right-[20px] h-[40px] w-[40px] rounded-[50%] flex justify-center items-center">
+                    <DialogTrigger asChild>
+                      <ZoomInIcon size={25} className="text-gray-400" />
+                    </DialogTrigger>
+                  </div>
+                  <div className="text-white absolute bottom-[30px] left-[20px] right-[45px] text-left z-[10] transition-all-[all 300ms ease]">
+                    <h2 className="text-xl font-semibold">{project.name}</h2>
+                    <span className="font-sans text-sm">Nextjs, Nodejs</span>
+                  </div>
                 </div>
               </div>
-            </div>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>{project.name}</DialogTitle>
+                  <DialogDescription>
+                    Make changes to your profile here. Click save when you're
+                    done.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4"></div>
+                {/* <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter> */}
+              </DialogContent>
+            </Dialog>
           ))}
-          <div></div>
         </div>
       </div>
     </section>
