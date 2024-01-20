@@ -1,8 +1,6 @@
-import { Github, Instagram, Twitter, X } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { Button } from "../ui/button";
 
 type BannerType = {
   image: {
@@ -21,7 +19,11 @@ const Banner: FC<BannerType> = ({ image }) => {
             </span>
           </h1>
           <p className="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">
-            {` I'm a passionate UI/UX designer with a mission to create delightful and intuitive digital experiences. With a strong foundation in design principles and a keen eye for detail, I specialize in translating complex ideas into user-friendly interfaces that captivate and engage.`}
+            I'm a passionate UI/UX designer with a mission to create delightful
+            and intuitive digital experiences. With a strong foundation in
+            design principles and a keen eye for detail, I specialize in
+            translating complex ideas into user-friendly interfaces that
+            captivate and engage.
           </p>
           <div className="flex justify-center mt-14 lg:justify-start space-x-5">
             <Link
