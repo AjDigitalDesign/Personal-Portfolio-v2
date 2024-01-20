@@ -4,7 +4,6 @@ import projectImg2 from "../../public/portfolio2.jpg";
 import projectImg3 from "../../public/portfolio3.jpg";
 import Link from "next/link";
 import { ZoomInIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 import {
   Dialog,
@@ -66,7 +65,7 @@ const RecentWork = () => {
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-10">
           {projects?.map((project) => (
-            <Dialog>
+            <Dialog key={project.id}>
               <div
                 key={project.id}
                 className="relative overflow-hidden rounded-[10px] shadow-md group"
@@ -99,9 +98,6 @@ const RecentWork = () => {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4"></div>
-                {/* <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter> */}
               </DialogContent>
             </Dialog>
           ))}
