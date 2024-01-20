@@ -13,13 +13,13 @@ const Banner: FC<BannerType> = ({ image }) => {
       <div className="container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row">
         <div className="mb-14 lg:mb-0 lg:w-1/2">
           <h1 className="max-w-xl text-[2.2rem] leading-none font-extrabold font-sans text-center md:text-5xl lg:text-left lg:leading-tight mb-5">
-            Hi, I'm AJ Jardiah Jr!
+            Hi, I am AJ Jardiah Jr!
             <span className="not-italic text-primary_red lg:block">
               Full Stack Software Dev.
             </span>
           </h1>
           <p className="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">
-            I'm a passionate UI/UX designer with a mission to create delightful
+            I am a passionate UI/UX designer with a mission to create delightful
             and intuitive digital experiences. With a strong foundation in
             design principles and a keen eye for detail, I specialize in
             translating complex ideas into user-friendly interfaces that
